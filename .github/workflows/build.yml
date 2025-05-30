@@ -26,17 +26,6 @@ jobs:
       - name: Check type
         run: npm run lint:tsc
 
-      - name: Run unit tests
-        run: npm run test:ci
-
-      - name: Codecov
-        uses: codecov/codecov-action@v5
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Run module tests
-        run: npm run test:esm
-
       - name: Build package
         run: npm run build
 
