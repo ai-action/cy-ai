@@ -28,10 +28,14 @@
     "url": "https://github.com/ai-action/cy-ai/issues"
   },
   "keywords": [
+    "cy-ai",
     "cypress",
     "ai",
+    "llm",
     "command",
-    "test"
+    "test",
+    "ui",
+    "automation"
   ],
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
