@@ -1,7 +1,7 @@
 {
-  "name": "npm-package-typescript-template",
+  "name": "cy-ai",
   "version": "1.0.0-alpha",
-  "description": "npm-package-typescript-template",
+  "description": "cy-ai",
   "author": "Mark <mark@remarkablemark.org> (https://remarkablemark.org)",
   "main": "./cjs/index.js",
   "scripts": {
@@ -24,13 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/remarkablemark/npm-package-typescript-template.git"
+    "url": "git+https://github.com/ai-action/cy-ai.git"
   },
   "bugs": {
-    "url": "https://github.com/remarkablemark/npm-package-typescript-template/issues"
+    "url": "https://github.com/ai-action/cy-ai/issues"
   },
   "keywords": [
-    "npm-package-typescript-template"
+    "cy-ai"
   ],
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
