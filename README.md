@@ -5,7 +5,7 @@
 [![NPM version](https://img.shields.io/npm/v/cy-ai.svg)](https://www.npmjs.com/package/cy-ai)
 [![build](https://github.com/ai-action/cy-ai/actions/workflows/build.yml/badge.svg)](https://github.com/ai-action/cy-ai/actions/workflows/build.yml)
 
-cy-ai
+🧪 Cypress AI command
 
 ## Quick Start
 
