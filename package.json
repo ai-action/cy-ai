@@ -1,7 +1,7 @@
 {
   "name": "cy-ai",
   "version": "1.0.0-alpha",
-  "description": "cy-ai",
+  "description": "Cypress AI command",
   "author": "Mark <mark@remarkablemark.org> (https://remarkablemark.org)",
   "main": "./cjs/index.js",
   "scripts": {
@@ -30,7 +30,10 @@
     "url": "https://github.com/ai-action/cy-ai/issues"
   },
   "keywords": [
-    "cy-ai"
+    "cypress",
+    "ai",
+    "command",
+    "test"
   ],
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
