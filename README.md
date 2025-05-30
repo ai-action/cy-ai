@@ -27,12 +27,6 @@ npm install cy-ai
 yarn add cy-ai
 ```
 
-[CDN](https://unpkg.com/browse/cy-ai/):
-
-```html
-<script src="https://unpkg.com/cy-ai@latest/umd/cy-ai.min.js"></script>
-```
-
 ## Usage
 
 ES Modules:
@@ -45,15 +39,6 @@ CommonJS:
 
 ```ts
 const { name } = require('cy-ai');
-```
-
-UMD:
-
-```html
-<script src="https://unpkg.com/cy-ai@latest/umd/cy-ai.min.js"></script>
-<script>
-  const { name } = window['cy-ai'];
-</script>
 ```
 
 ## Release
