@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rm -rf docs lib",
+    "clean": "rm -rf cypress/{downloads,screenshots,videos} docs lib",
+    "cypress:open": "cypress open",
     "docs": "typedoc",
     "docs:watch": "npm run docs -- --watch",
     "lint": "eslint .",
@@ -15,7 +16,8 @@
     "lint:package": "publint",
     "lint:tsc": "tsc --noEmit",
     "prepare": "husky",
-    "prepublishOnly": "npm run lint && npm run lint:tsc && npm run clean && npm run build"
+    "prepublishOnly": "npm run lint && npm run lint:tsc && npm run clean && npm run build",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,11 @@
     "ui",
     "automation"
   ],
+  "dependencies": {
+    "@langchain/core": "^0.3",
+    "@langchain/ollama": "^0.2",
+    "dompurify": "3"
+  },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
