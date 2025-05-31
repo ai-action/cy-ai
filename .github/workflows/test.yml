@@ -15,6 +15,12 @@ jobs:
       - name: Setup Ollama
         uses: ai-action/setup-ollama@v1
 
+      - name: Cache LLM
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama
+          key: ${{ runner.os }}-ollama
+
       - name: Download LLM
         run: ollama pull qwen2.5-coder
 
