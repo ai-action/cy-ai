@@ -1,1 +1,1 @@
-export const name = 'cy-ai';
+import './ai';
