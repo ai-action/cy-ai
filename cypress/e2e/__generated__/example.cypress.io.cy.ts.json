@@ -1,0 +1,9 @@
+{
+  "example.cypress.io submits form": {
+    "go to example.cypress.io and see \"Kitchen Sink\"": "cy.visit('https://example.cypress.io')\ncy.contains('Kitchen Sink').click()",
+    "click on link \"submit\"": "cy.contains('submit').click()",
+    "find label 'Coupon Code' and type 'HALFOFF'": "cy.contains('Coupon Code').closest('label').next().type('HALFOFF')",
+    "click button 'Submit'": "cy.get('button:contains(\"Submit\")').click()",
+    "assert 'Your form has been submitted!'": "cy.get('p:contains(\"Your form has been submitted!\")').should('be.visible');"
+  }
+}
