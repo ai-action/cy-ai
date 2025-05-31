@@ -17,7 +17,7 @@ declare global {
 }
 
 const options = { log: false };
-const timeout = minutes(3);
+const timeout = minutes(5);
 
 Cypress.Commands.add('ai', (task) => {
   Cypress.log({ displayName: 'ai', message: task });
