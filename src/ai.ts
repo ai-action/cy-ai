@@ -16,6 +16,9 @@ declare global {
   }
 }
 
+const options = { log: false };
+const timeout = minutes(5);
+
 Cypress.Commands.add('ai', (task) => {
   Cypress.log({ displayName: 'ai', message: task });
 
@@ -26,7 +29,7 @@ Cypress.Commands.add('ai', (task) => {
       return eval(code);
     }
 
-    cy.document({ log: false }).then({ timeout: minutes(2) }, async (doc) => {
+    cy.document(options).then({ timeout }, async (doc) => {
       const response = await llm.invoke({
         task,
         html: sanitize(doc.body.innerHTML),
