@@ -49,3 +49,8 @@ lib/
 
 # Mac OS
 .DS_Store
+
+# Cypress
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
