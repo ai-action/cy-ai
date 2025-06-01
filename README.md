@@ -65,6 +65,7 @@ ollama pull qwen2.5-coder
 Write a test:
 
 ```js
+// cypress/e2e/example.cy.js
 it('visits example.com', () => {
   cy.ai('go to https://example.com and see heading "Example Domain"')
 })
