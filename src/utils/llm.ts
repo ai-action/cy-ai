@@ -8,6 +8,6 @@ const llm = new Ollama({
   numCtx: 16384,
 });
 
-const prompt = PromptTemplate.fromTemplate(template.trim());
+export const prompt = PromptTemplate.fromTemplate(template.trim());
 
 export const chain = prompt.pipe(llm);

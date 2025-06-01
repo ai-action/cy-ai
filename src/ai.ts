@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
 
+import type { Runnable } from '@langchain/core/runnables';
 import { sanitize } from 'dompurify';
 
-import { generated, llm, options, regex } from './utils';
+import { generated, options, regex } from './utils';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -15,6 +16,13 @@ declare global {
     }
 
     interface Options extends Loggable, Timeoutable {
+      /**
+       * LangChain Runnable to invoke.
+       *
+       * @defaultValue Prompt template using Ollama model `qwen2.5-coder`
+       */
+      llm: Runnable;
+
       /**
        * Whether to regenerate the Cypress step with AI.
        *
@@ -32,6 +40,7 @@ Cypress.Commands.add(name, command);
 function command(
   task: string,
   {
+    llm = options.llm,
     log = options.log,
     regenerate = options.regenerate,
     timeout = options.timeout,

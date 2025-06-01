@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 
-import { noop } from '.';
+import { noop } from './noop';
 
 const options = { log: false };
 
