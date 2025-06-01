@@ -82,6 +82,36 @@ it('visits example.com', () => {
 > });
 > ```
 
+## Options
+
+### log
+
+Whether to display the command logs. Defaults to `true`:
+
+```js
+cy.ai('prompt', { log: true });
+```
+
+Hide Cypress and console logs:
+
+```js
+cy.ai('prompt', { log: false });
+```
+
+### timeout
+
+Time to wait in milliseconds. Defaults to 2 minutes:
+
+```js
+cy.ai('prompt', { timeout: 120000 });
+```
+
+Set timeout to 5 minutes:
+
+```js
+cy.ai('prompt', { timeout: 1000 * 60 * 5 });
+```
+
 ## How It Works
 
 1. A prompt is created from your task, the HTML body, and the template.
