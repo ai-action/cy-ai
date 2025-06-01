@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/ai-action/cy-ai/compare/v0.1.0...v0.2.0) (2025-06-01)
+
+
+### Features
+
+* add command options `log` and `timeout` ([52df357](https://github.com/ai-action/cy-ai/commit/52df3574226e182fb2b501436856d5f0aec05bad))
+
 ## 0.1.0 (2025-05-31)
 
 ### Features
