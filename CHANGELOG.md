@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/ai-action/cy-ai/compare/v0.2.0...v0.3.0) (2025-06-01)
+
+
+### Features
+
+* **options:** add `regenerate` that defaults to false ([a837ac0](https://github.com/ai-action/cy-ai/commit/a837ac0d612529b0762dec85fd79d9dbbe87c2f4))
+
 ## [0.2.0](https://github.com/ai-action/cy-ai/compare/v0.1.0...v0.2.0) (2025-06-01)
 
 
