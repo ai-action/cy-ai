@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/ai-action/cy-ai/compare/v0.4.0...v0.5.0) (2025-06-01)
+
+
+### Features
+
+* **aiConfig:** add command `aiConfig` that sets config options ([c2dbf7f](https://github.com/ai-action/cy-ai/commit/c2dbf7fd8869ceac646ef0d5c32295431d2a83d5))
+
 ## [0.4.0](https://github.com/ai-action/cy-ai/compare/v0.3.0...v0.4.0) (2025-06-01)
 
 
