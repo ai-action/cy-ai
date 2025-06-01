@@ -8,6 +8,10 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scenario: [default, nongenerated, regenerate]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,7 +29,14 @@ jobs:
         run: ollama pull qwen2.5-coder
 
       - name: Delete generated test
+        if: matrix.scenario == 'nongenerated'
         run: rm cypress/e2e/__generated__/options.cy.ts.json
+
+      - name: Regenerate test
+        if: matrix.scenario == 'regenerate'
+        run: >
+          find cypress/e2e -type f -name "*.cy.ts" |
+          xargs sed -i 's/regenerate: false/regenerate: true/g'
 
       - name: Cypress run
         uses: cypress-io/github-action@v6

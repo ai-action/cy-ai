@@ -98,6 +98,20 @@ Hide Cypress and console logs:
 cy.ai('prompt', { log: false });
 ```
 
+### regenerate
+
+Whether to regenerate the Cypress step with AI. Defaults to `false`:
+
+```js
+cy.ai('prompt', { regenerate: false });
+```
+
+Regenerate the Cypress step with AI:
+
+```js
+cy.ai('prompt', { regenerate: true });
+```
+
 ### timeout
 
 Time to wait in milliseconds. Defaults to 2 minutes:
@@ -123,7 +137,7 @@ cy.ai('prompt', { timeout: 1000 * 60 * 5 });
 
 When running tests, if the generated Cypress code exists, the command will use the generated code.
 
-To regenerate a step, delete the generated code in `cypress/e2e/**/__generated__/*.json`.
+To regenerate a step, use the [regenerate](#regenerate) option or delete the generated code in `cypress/e2e/**/__generated__/*.json`.
 
 ## Release
 

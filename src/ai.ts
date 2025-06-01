@@ -14,7 +14,14 @@ declare global {
       ai(task: string, options?: Partial<Options>): Chainable<void>;
     }
 
-    interface Options extends Loggable, Timeoutable {}
+    interface Options extends Loggable, Timeoutable {
+      /**
+       * Whether to regenerate the Cypress step with AI.
+       *
+       * @defaultValue false
+       */
+      regenerate: boolean;
+    }
   }
 }
 
@@ -24,17 +31,23 @@ Cypress.Commands.add(name, command);
 
 function command(
   task: string,
-  { log = options.log, timeout = options.timeout } = {},
+  {
+    log = options.log,
+    regenerate = options.regenerate,
+    timeout = options.timeout,
+  } = {},
 ) {
   if (log) {
     Cypress.log({ displayName: name, message: task });
   }
 
   generated.read().then((content) => {
-    const code = generated.code(content, task);
+    if (!regenerate) {
+      const code = generated.code(content, task);
 
-    if (code) {
-      return eval(code);
+      if (code) {
+        return eval(code);
+      }
     }
 
     cy.document({ log: false }).then({ timeout }, async (doc) => {
