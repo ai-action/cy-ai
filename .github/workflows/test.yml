@@ -25,7 +25,7 @@ jobs:
         run: ollama pull qwen2.5-coder
 
       - name: Delete generated test
-        run: rm cypress/e2e/__generated__/example.com.cy.ts.json
+        run: rm cypress/e2e/__generated__/options.cy.ts.json
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
