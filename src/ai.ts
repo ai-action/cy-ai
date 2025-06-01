@@ -2,7 +2,7 @@
 
 import { sanitize } from 'dompurify';
 
-import { generated, llm, minutes, regex } from './utils';
+import { generated, llm, options, regex } from './utils';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -22,7 +22,10 @@ const name = 'ai';
 
 Cypress.Commands.add(name, command);
 
-function command(task: string, { log = true, timeout = minutes(2) } = {}) {
+function command(
+  task: string,
+  { log = options.log, timeout = options.timeout } = {},
+) {
   if (log) {
     Cypress.log({ displayName: name, message: task });
   }
