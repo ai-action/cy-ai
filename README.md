@@ -84,13 +84,17 @@ it('visits example.com', () => {
 
 ## cy.ai
 
-Generate Cypress tests with AI.
+Generate Cypress tests with AI:
+
+```
+cy.ai(string[, options])
+```
 
 ### llm
 
 LangChain [Runnable](https://js.langchain.com/docs/concepts/runnables/) to invoke. Defaults to a prompt template using the Ollama model `qwen2.5-coder`.
 
-Use a different model:
+Use a different large language model:
 
 ```ts
 import { Ollama } from '@langchain/ollama';
@@ -106,7 +110,7 @@ const chain = prompt.pipe(llm);
 cy.ai('prompt', { llm: chain });
 ```
 
-Customize the template:
+Or customize the template:
 
 ```ts
 import { PromptTemplate } from '@langchain/core/prompts';
@@ -118,10 +122,10 @@ const llm = new Ollama({
 });
 
 const prompt = PromptTemplate.fromTemplate(`
-You are writing an E2E test step with Cypress
+You are writing an E2E test step with Cypress.
 
 Rules:
-1. Return Cypress code without "describe" and "it"
+1. Return JavaScript Cypress code without "describe" and "it".
 
 Task: {task}
 
@@ -187,7 +191,11 @@ cy.ai('prompt', { timeout: 1000 * 60 * 5 });
 
 ## cy.aiConfig
 
-Configure global options for [cy.ai](#cyai).
+Configure global options for [cy.ai](#cyai):
+
+```
+cy.aiConfig(options)
+```
 
 ### options
 
@@ -195,7 +203,7 @@ Override default options:
 
 ```js
 cy.aiConfig({
-  llm: myLLM,
+  llm: chain,
   log: false,
   regenerate: true,
   timeout: 1000 * 60 * 3, // 3 minutes
