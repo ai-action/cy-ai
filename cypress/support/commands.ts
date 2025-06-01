@@ -36,4 +36,4 @@
 //   }
 // }
 
-import '../../src';
+import '../../src'

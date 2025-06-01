@@ -1,4 +1,4 @@
-import { defineConfig } from 'cypress';
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
   // don't block CORS for LLM request
@@ -10,4 +10,4 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
-});
+})

@@ -1,5 +1,5 @@
-import './ai';
-import './aiConfig';
+import './ai'
+import './aiConfig'
 
-export { prompt } from './utils/llm';
-export { template } from './utils/template';
+export { prompt } from './utils/llm'
+export { template } from './utils/template'

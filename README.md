@@ -12,7 +12,7 @@
 🧪 Cypress AI command that generates E2E tests using an LLM (Large Language Model):
 
 ```js
-cy.ai(string);
+cy.ai(string)
 ```
 
 ## Prerequisites
@@ -40,14 +40,14 @@ Import command using ES2015 syntax:
 
 ```ts
 // cypress/support/commands.ts
-import 'cy-ai';
+import 'cy-ai'
 ```
 
 Or use CommonJS syntax:
 
 ```js
 // cypress/support/commands.js
-require('cy-ai');
+require('cy-ai')
 ```
 
 Start the Ollama server:
@@ -66,8 +66,8 @@ Write a test:
 
 ```js
 it('visits example.com', () => {
-  cy.ai('go to https://example.com and see heading "Example Domain"');
-});
+  cy.ai('go to https://example.com and see heading "Example Domain"')
+})
 ```
 
 > [!TIP]
@@ -75,11 +75,11 @@ it('visits example.com', () => {
 >
 > ```js
 > // cypress.config.js
-> import { defineConfig } from 'cypress';
+> import { defineConfig } from 'cypress'
 >
 > export default defineConfig({
 >   chromeWebSecurity: false,
-> });
+> })
 > ```
 
 ## cy.ai
@@ -97,29 +97,29 @@ LangChain [Runnable](https://js.langchain.com/docs/concepts/runnables/) to invok
 Use a different large language model:
 
 ```ts
-import { Ollama } from '@langchain/ollama';
-import { prompt } from 'cy-ai';
+import { Ollama } from '@langchain/ollama'
+import { prompt } from 'cy-ai'
 
 const llm = new Ollama({
   model: 'codellama',
   numCtx: 16384,
-});
+})
 
-const chain = prompt.pipe(llm);
+const chain = prompt.pipe(llm)
 
-cy.ai('prompt', { llm: chain });
+cy.ai('prompt', { llm: chain })
 ```
 
 Or customize the template:
 
 ```ts
-import { PromptTemplate } from '@langchain/core/prompts';
-import { Ollama } from '@langchain/ollama';
+import { PromptTemplate } from '@langchain/core/prompts'
+import { Ollama } from '@langchain/ollama'
 
 const llm = new Ollama({
   model: 'codellama',
   numCtx: 16384,
-});
+})
 
 const prompt = PromptTemplate.fromTemplate(`
 You are writing an E2E test step with Cypress.
@@ -133,11 +133,11 @@ HTML:
 \`\`\`html
 {html}
 \`\`\`
-`);
+`)
 
-const chain = prompt.pipe(llm);
+const chain = prompt.pipe(llm)
 
-cy.ai('prompt', { llm: chain });
+cy.ai('prompt', { llm: chain })
 ```
 
 > [!IMPORTANT]
@@ -152,13 +152,13 @@ cy.ai('prompt', { llm: chain });
 Whether to display the command logs. Defaults to `true`:
 
 ```js
-cy.ai('prompt', { log: true });
+cy.ai('prompt', { log: true })
 ```
 
 Hide Cypress and console logs:
 
 ```js
-cy.ai('prompt', { log: false });
+cy.ai('prompt', { log: false })
 ```
 
 ### regenerate
@@ -166,13 +166,13 @@ cy.ai('prompt', { log: false });
 Whether to regenerate the Cypress step with AI. Defaults to `false`:
 
 ```js
-cy.ai('prompt', { regenerate: false });
+cy.ai('prompt', { regenerate: false })
 ```
 
 Regenerate the Cypress step with AI:
 
 ```js
-cy.ai('prompt', { regenerate: true });
+cy.ai('prompt', { regenerate: true })
 ```
 
 ### timeout
@@ -180,13 +180,13 @@ cy.ai('prompt', { regenerate: true });
 Time to wait in milliseconds. Defaults to 2 minutes:
 
 ```js
-cy.ai('prompt', { timeout: 120000 });
+cy.ai('prompt', { timeout: 120000 })
 ```
 
 Set timeout to 5 minutes:
 
 ```js
-cy.ai('prompt', { timeout: 1000 * 60 * 5 });
+cy.ai('prompt', { timeout: 1000 * 60 * 5 })
 ```
 
 ## cy.aiConfig
@@ -207,7 +207,7 @@ cy.aiConfig({
   log: false,
   regenerate: true,
   timeout: 1000 * 60 * 3, // 3 minutes
-});
+})
 ```
 
 Set timeout to 5 minutes:
@@ -215,7 +215,7 @@ Set timeout to 5 minutes:
 ```js
 cy.aiConfig({
   timeout: 1000 * 60 * 5,
-});
+})
 ```
 
 ## How It Works

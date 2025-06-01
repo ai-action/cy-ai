@@ -1,1 +1,1 @@
-export const codeblock = /```(javascript|js)?([\s\S]+?)```/;
+export const codeblock = /```(javascript|js)?([\s\S]+?)```/

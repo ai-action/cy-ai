@@ -1,8 +1,8 @@
-import { resolve } from 'path';
+import { resolve } from 'path'
 
-import { noop } from './noop';
+import { noop } from './noop'
 
-const options = { log: false };
+const options = { log: false }
 
 /**
  * Get generated file path.
@@ -12,14 +12,14 @@ const options = { log: false };
  * @returns - Generated file path.
  */
 const filePath = () =>
-  resolve(Cypress.spec.absolute, `../__generated__/${Cypress.spec.name}.json`);
+  resolve(Cypress.spec.absolute, `../__generated__/${Cypress.spec.name}.json`)
 
 /**
  * Read generated file.
  *
  * @returns - Chainable JSON content.
  */
-export const read = () => cy.readFile(filePath(), options).should(noop);
+export const read = () => cy.readFile(filePath(), options).should(noop)
 
 const test = {
   /**
@@ -28,11 +28,11 @@ const test = {
    * @returns - Test key.
    */
   get key() {
-    return Cypress.currentTest.titlePath.join(' ');
+    return Cypress.currentTest.titlePath.join(' ')
   },
-};
+}
 
-type Content = Record<string, Record<string, string>>;
+type Content = Record<string, Record<string, string>>
 
 /**
  * Get generated code.
@@ -42,7 +42,7 @@ type Content = Record<string, Record<string, string>>;
  * @returns - Cypress code.
  */
 export const code = (content: Content, task: string) =>
-  content?.[test.key]?.[task] ?? '';
+  content?.[test.key]?.[task] ?? ''
 
 /**
  * Save generated code.
@@ -52,14 +52,14 @@ export const code = (content: Content, task: string) =>
  */
 export function save(task: string, code: string) {
   read().then((content: Content) => {
-    const { key } = test;
+    const { key } = test
 
-    content = content || {};
-    content[key] = content[key] || {};
-    content[key][task] = code;
+    content = content || {}
+    content[key] = content[key] || {}
+    content[key][task] = code
 
-    const json = JSON.stringify(content, null, 2);
+    const json = JSON.stringify(content, null, 2)
 
-    cy.writeFile(filePath(), json, options);
-  });
+    cy.writeFile(filePath(), json, options)
+  })
 }
