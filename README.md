@@ -134,6 +134,7 @@ const chain = prompt.pipe(llm);
 cy.ai('prompt', { llm: chain });
 ```
 
+> [!IMPORTANT]
 > Don't forget to pull the Ollama model:
 >
 > ```sh
@@ -191,9 +192,9 @@ cy.ai('prompt', { timeout: 1000 * 60 * 5 });
 5. If the steps pass, the code is saved to `cypress/e2e/**/__generated__/*.json`.
 6. If the steps fail, an error is thrown and the LLM response can be inspected in the browser **Console**.
 
-When running tests, if the generated Cypress code exists, the command will use the generated code.
+When running tests, if the generated Cypress code exists, the command will reuse the existing code.
 
-To regenerate a step, use the [regenerate](#regenerate) option or delete the generated code in `cypress/e2e/**/__generated__/*.json`.
+To regenerate a step, enable the [regenerate](#regenerate) option or delete the generated code in `cypress/e2e/**/__generated__/*.json`.
 
 ## Release
 
