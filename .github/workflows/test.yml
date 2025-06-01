@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scenario: [default, nongenerated, regenerate]
+        scenario: [generated, nongenerated, regenerate]
 
     steps:
       - name: Checkout repository
