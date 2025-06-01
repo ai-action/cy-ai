@@ -2,7 +2,7 @@
 
 import { sanitize } from 'dompurify';
 
-import { generated, llm, minutes, regex } from './utils';
+import { generated, llm, options, regex } from './utils';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -11,16 +11,24 @@ declare global {
       /**
        * Run Cypress with AI prompt.
        */
-      ai(task: string): Chainable<void>;
+      ai(task: string, options?: Partial<Options>): Chainable<void>;
     }
+
+    interface Options extends Loggable, Timeoutable {}
   }
 }
 
-const options = { log: false };
-const timeout = minutes(5);
+const name = 'ai';
 
-Cypress.Commands.add('ai', (task) => {
-  Cypress.log({ displayName: 'ai', message: task });
+Cypress.Commands.add(name, command);
+
+function command(
+  task: string,
+  { log = options.log, timeout = options.timeout } = {},
+) {
+  if (log) {
+    Cypress.log({ displayName: name, message: task });
+  }
 
   generated.read().then((content) => {
     const code = generated.code(content, task);
@@ -29,17 +37,19 @@ Cypress.Commands.add('ai', (task) => {
       return eval(code);
     }
 
-    cy.document(options).then({ timeout }, async (doc) => {
+    cy.document({ log: false }).then({ timeout }, async (doc) => {
       const response = await llm.invoke({
         task,
         html: sanitize(doc.body.innerHTML),
       });
 
-      // eslint-disable-next-line no-console
-      console.table({
-        Task: task,
-        Response: response,
-      });
+      if (log) {
+        // eslint-disable-next-line no-console
+        console.table({
+          Task: task,
+          Response: response,
+        });
+      }
 
       const code = response.match(regex.codeblock)?.[2]?.trim();
 
@@ -51,4 +61,4 @@ Cypress.Commands.add('ai', (task) => {
       throw new Error(response);
     });
   });
-});
+}

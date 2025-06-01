@@ -1,5 +1,5 @@
 {
-  "example.com sees heading": {
+  "options sets options": {
     "open https://example.com and see heading 'Example Domain'": "cy.visit('https://example.com');\ncy.contains('Example Domain').should('be.visible');"
   }
 }

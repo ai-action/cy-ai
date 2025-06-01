@@ -1,5 +1,5 @@
 {
-  "example.cypress.io submits form": {
+  "ai submits form": {
     "go to example.cypress.io and see \"Kitchen Sink\"": "cy.visit('https://example.cypress.io')\ncy.contains('Kitchen Sink').click()",
     "click on link \"submit\"": "cy.contains('submit').click()",
     "find label 'Coupon Code' and type 'HALFOFF'": "cy.contains('Coupon Code').closest('label').next().type('HALFOFF')",
