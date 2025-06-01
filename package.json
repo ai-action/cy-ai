@@ -1,6 +1,6 @@
 {
   "name": "cy-ai",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Cypress AI command",
   "author": "Mark <mark@remarkablemark.org> (https://remarkablemark.org)",
   "main": "./lib/index.js",

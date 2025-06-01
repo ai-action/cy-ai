@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/ai-action/cy-ai/compare/v0.3.0...v0.4.0) (2025-06-01)
+
+
+### Features
+
+* **options:** add `llm` that defaults to Ollama model qwen2.5-coder ([865a198](https://github.com/ai-action/cy-ai/commit/865a198287dffc3e80acd8792384c2ac5d5f657c))
+
 ## [0.3.0](https://github.com/ai-action/cy-ai/compare/v0.2.0...v0.3.0) (2025-06-01)
 
 
