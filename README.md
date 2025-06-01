@@ -84,6 +84,62 @@ it('visits example.com', () => {
 
 ## Options
 
+### llm
+
+LangChain [Runnable](https://js.langchain.com/docs/concepts/runnables/) to invoke. Defaults to a prompt template using the Ollama model `qwen2.5-coder`.
+
+Use a different model:
+
+```ts
+import { Ollama } from '@langchain/ollama';
+import { prompt } from 'cy-ai';
+
+const llm = new Ollama({
+  model: 'codellama',
+  numCtx: 16384,
+});
+
+const chain = prompt.pipe(llm);
+
+cy.ai('prompt', { llm: chain });
+```
+
+Customize the template:
+
+```ts
+import { PromptTemplate } from '@langchain/core/prompts';
+import { Ollama } from '@langchain/ollama';
+
+const llm = new Ollama({
+  model: 'codellama',
+  numCtx: 16384,
+});
+
+const prompt = PromptTemplate.fromTemplate(`
+You are writing an E2E test step with Cypress
+
+Rules:
+1. Return Cypress code without "describe" and "it"
+
+Task: {task}
+
+HTML:
+\`\`\`html
+{html}
+\`\`\`
+`);
+
+const chain = prompt.pipe(llm);
+
+cy.ai('prompt', { llm: chain });
+```
+
+> Don't forget to pull the Ollama model:
+>
+> ```sh
+> ollama pull codellama
+> ```
+
 ### log
 
 Whether to display the command logs. Defaults to `true`:
