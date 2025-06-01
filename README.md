@@ -11,8 +11,8 @@
 
 🧪 Cypress AI command that generates E2E tests using an LLM (Large Language Model):
 
-```
-cy.ai(string)
+```js
+cy.ai(string);
 ```
 
 ## Prerequisites
@@ -50,31 +50,19 @@ Or use CommonJS syntax:
 require('cy-ai');
 ```
 
-Update `cypress.config.js` so LLM request is not blocked by CORS:
-
-```js
-// cypress.config.js
-import { defineConfig } from 'cypress';
-
-export default defineConfig({
-  chromeWebSecurity: false,
-  // ...
-});
-```
-
-Run Ollama:
+Start the Ollama server:
 
 ```sh
 ollama serve
 ```
 
-Download [LLM](https://ollama.com/library/qwen2.5-coder):
+Download the [LLM](https://ollama.com/library/qwen2.5-coder):
 
 ```sh
 ollama pull qwen2.5-coder
 ```
 
-Write test:
+Write a test:
 
 ```js
 it('visits example.com', () => {
@@ -82,15 +70,30 @@ it('visits example.com', () => {
 });
 ```
 
+> [!TIP]
+> If you're running Chrome, disable `chromeWebSecurity` so the LLM requests aren't blocked by CORS:
+>
+> ```js
+> // cypress.config.js
+> import { defineConfig } from 'cypress';
+>
+> export default defineConfig({
+>   chromeWebSecurity: false,
+> });
+> ```
+
 ## How It Works
 
-1. A prompt is created using your task, the current HTML body, and a template.
+1. A prompt is created from your task, the HTML body, and the template.
 2. The prompt is sent to the LLM server.
-3. The LLM server responds with Cypress code that gets cleaned and run.
-4. If the steps pass, the code is saved to `cypress/e2e/**/__generated__/*.json`.
-5. If the steps fail, an error is thrown and you can inspect the LLM response in the browser **Console**.
+3. The LLM server responds with Cypress code.
+4. The Cypress code is cleaned and run.
+5. If the steps pass, the code is saved to `cypress/e2e/**/__generated__/*.json`.
+6. If the steps fail, an error is thrown and the LLM response can be inspected in the browser **Console**.
 
-The command will run the generated Cypress code if it exists. To regenerate a step, delete the task in `cypress/e2e/**/__generated__/*.json`.
+When running tests, if the generated Cypress code exists, the command will use the generated code.
+
+To regenerate a step, delete the generated code in `cypress/e2e/**/__generated__/*.json`.
 
 ## Release
 
