@@ -7,7 +7,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       /**
-       * Set configuration options for `cy.ai`.
+       * Set global configuration options for `cy.ai`.
        */
       aiConfig(options: Partial<AiOptions>): Chainable<void>;
     }

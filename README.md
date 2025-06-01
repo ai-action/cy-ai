@@ -187,7 +187,7 @@ cy.ai('prompt', { timeout: 1000 * 60 * 5 });
 
 ## cy.aiConfig
 
-Set configuration options for `cy.ai`.
+Set global configuration options for [cy.ai](#cyai).
 
 ### options
 
