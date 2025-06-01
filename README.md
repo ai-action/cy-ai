@@ -82,7 +82,9 @@ it('visits example.com', () => {
 > });
 > ```
 
-## Options
+## cy.ai
+
+Use AI to generate Cypress tests given your input.
 
 ### llm
 
@@ -181,6 +183,31 @@ Set timeout to 5 minutes:
 
 ```js
 cy.ai('prompt', { timeout: 1000 * 60 * 5 });
+```
+
+## cy.aiConfig
+
+Set global configuration options for [cy.ai](#cyai).
+
+### options
+
+Override default options:
+
+```js
+cy.aiConfig({
+  llm: myLLM,
+  log: false,
+  regenerate: true,
+  timeout: 1000 * 60 * 3, // 3 minutes
+});
+```
+
+Set timeout to 5 minutes:
+
+```js
+cy.aiConfig({
+  timeout: 1000 * 60 * 5,
+});
 ```
 
 ## How It Works

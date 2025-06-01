@@ -11,7 +11,7 @@ You are writing an E2E test step with Cypress.
 
 Rules:
 
-1. Return Cypress code without "describe" and "it".
+1. Return JavaScript Cypress code without "describe" and "it".
 
 Task: {task}
 `);

@@ -12,10 +12,10 @@ declare global {
       /**
        * Run Cypress with AI prompt.
        */
-      ai(task: string, options?: Partial<Options>): Chainable<void>;
+      ai(task: string, options?: Partial<AiOptions>): Chainable<void>;
     }
 
-    interface Options extends Loggable, Timeoutable {
+    interface AiOptions extends Loggable, Timeoutable {
       /**
        * LangChain Runnable to invoke.
        *
