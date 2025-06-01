@@ -84,7 +84,7 @@ it('visits example.com', () => {
 
 ## cy.ai
 
-Use AI to generate Cypress tests given your input.
+Generate Cypress tests with AI.
 
 ### llm
 
@@ -187,7 +187,7 @@ cy.ai('prompt', { timeout: 1000 * 60 * 5 });
 
 ## cy.aiConfig
 
-Set global configuration options for [cy.ai](#cyai).
+Configure global options for [cy.ai](#cyai).
 
 ### options
 
