@@ -236,6 +236,10 @@ To regenerate a step, enable the [regenerate](#regenerate) option or delete the 
 
 Release is automated with [Release Please](https://github.com/googleapis/release-please).
 
+## Resources
+
+- [cypress-ai-demo](https://github.com/ai-action/cypress-ai-demo)
+
 ## License
 
 [MIT](https://github.com/ai-action/cy-ai/blob/master/LICENSE)
