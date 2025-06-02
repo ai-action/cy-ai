@@ -23,7 +23,7 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      - name: Check type
+      - name: Type check
         run: npm run lint:tsc
 
       - name: Build package
