@@ -5,29 +5,33 @@ import { noop } from './noop'
 const options = { log: false }
 
 /**
- * Get generated file path.
- *
- * E.g., "/Users/remarkablemark/app/cypress/e2e/__generated__/spec.cy.js.json").
- *
- * @returns - Generated file path.
- */
-const filePath = () =>
-  resolve(Cypress.spec.absolute, `../__generated__/${Cypress.spec.name}.json`)
-
-/**
  * Read generated file.
  *
  * @returns - Chainable JSON content.
  */
-export const read = () => cy.readFile(filePath(), options).should(noop)
+export const read = () => cy.readFile(generated.path, options).should(noop)
 
-const test = {
+const generated = {
   /**
-   * Generate key using test title (`describe` and `it`).
+   * Generated test file path.
+   *
+   * E.g., "/Users/remarkablemark/app/cypress/e2e/__generated__/spec.cy.js.json").
+   *
+   * @returns - Generated file path.
+   */
+  get path() {
+    return resolve(
+      Cypress.spec.absolute,
+      `../__generated__/${Cypress.spec.name}.json`,
+    )
+  },
+
+  /**
+   * Test title that combines `describe` and `it`.
    *
    * @returns - Test key.
    */
-  get key() {
+  get title() {
     return Cypress.currentTest.titlePath.join(' ')
   },
 }
@@ -42,7 +46,7 @@ type Content = Record<string, Record<string, string>>
  * @returns - Cypress code.
  */
 export const code = (content: Content, task: string) =>
-  content?.[test.key]?.[task] ?? ''
+  content?.[generated.title]?.[task] ?? ''
 
 /**
  * Save generated code.
@@ -52,14 +56,14 @@ export const code = (content: Content, task: string) =>
  */
 export function save(task: string, code: string) {
   read().then((content: Content) => {
-    const { key } = test
+    const { title } = generated
 
     content = content || {}
-    content[key] = content[key] || {}
-    content[key][task] = code
+    content[title] = content[title] || {}
+    content[title][task] = code
 
     const json = JSON.stringify(content, null, 2)
 
-    cy.writeFile(filePath(), json, options)
+    cy.writeFile(generated.path, json, options)
   })
 }

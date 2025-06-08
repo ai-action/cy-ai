@@ -41,6 +41,15 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
+      - name: Check generated test
+        run: |
+          if [[ -f 'cypress/e2e/__generated__/options.cy.ts.json' ]]; then
+            echo 'Generated file exists'
+          else
+            echo 'Generated file does not exist'
+            exit 1
+          fi
+
       - name: Record screenshots
         uses: actions/upload-artifact@v4
         if: failure()
