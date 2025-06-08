@@ -50,9 +50,9 @@ function command(
     Cypress.log({ displayName: name, message: task })
   }
 
-  generated.read().then((content) => {
+  generated.read(task).then((content) => {
     if (!regenerate) {
-      const code = generated.code(content, task)
+      const code = generated.code(content)
 
       if (code) {
         return eval(code)
@@ -77,7 +77,7 @@ function command(
 
       if (code) {
         eval(code)
-        return generated.save(task, code)
+        return generated.save(code)
       }
 
       throw new Error(response)
