@@ -232,6 +232,9 @@ When running tests, if the generated Cypress code exists, the command will reuse
 
 To regenerate a step, enable the [regenerate](#regenerate) option or delete the generated code in `cypress/e2e/**/__generated__/*.json`.
 
+> [!WARNING]
+> If you have tests with duplicate or identical titles (`describe` and `it`), it could cause the generated tests to fail.
+
 ## Release
 
 Release is automated with [Release Please](https://github.com/googleapis/release-please).
