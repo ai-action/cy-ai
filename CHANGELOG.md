@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/ai-action/cy-ai/compare/v0.5.0...v0.6.0) (2025-06-08)
+
+
+### Features
+
+* **generated:** add counter for duplicate tasks ([53c2bc9](https://github.com/ai-action/cy-ai/commit/53c2bc94247096efda6f63bfbd896c337ae57a99))
+
 ## [0.5.0](https://github.com/ai-action/cy-ai/compare/v0.4.0...v0.5.0) (2025-06-01)
 
 
