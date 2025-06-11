@@ -36,18 +36,16 @@ yarn add cy-ai --dev
 
 ## Usage
 
-Import command using ES2015 syntax:
+If you're using TypeScript, import the command using ES2015 syntax:
 
-```ts
-// cypress/support/commands.ts
-import 'cy-ai'
+```sh
+echo "import 'cy-ai'" >> cypress/support/commands.ts
 ```
 
-Or use CommonJS syntax:
+Or if you're using JavaScript, use CommonJS require:
 
-```js
-// cypress/support/commands.js
-require('cy-ai')
+```sh
+echo "require('cy-ai')" >> cypress/support/commands.js
 ```
 
 Start the Ollama server:
