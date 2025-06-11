@@ -25,13 +25,13 @@ cy.ai(string)
 [NPM](https://www.npmjs.com/package/cy-ai):
 
 ```sh
-npm install cy-ai
+npm install cy-ai --save-dev
 ```
 
 [Yarn](https://yarnpkg.com/package/cy-ai):
 
 ```sh
-yarn add cy-ai
+yarn add cy-ai --dev
 ```
 
 ## Usage
