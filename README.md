@@ -15,6 +15,8 @@
 cy.ai(string)
 ```
 
+Read the [wiki](https://github.com/ai-action/cy-ai/wiki).
+
 ## Prerequisites
 
 - [Cypress](https://docs.cypress.io/app/get-started/install-cypress)
@@ -218,22 +220,6 @@ cy.aiConfig({
 ```
 
 Set the LLM to [Anthropic](https://github.com/ai-action/cy-ai/wiki/Anthropic).
-
-## How It Works
-
-1. A prompt is created from your task, the HTML body, and the template.
-2. The prompt is sent to the LLM server.
-3. The LLM server responds with Cypress code.
-4. The Cypress code is cleaned and run.
-5. If the steps pass, the code is saved to `cypress/e2e/**/__generated__/*.json`.
-6. If the steps fail, an error is thrown and the LLM response can be inspected in the browser **Console**.
-
-When running tests, if the generated Cypress code exists, the command will reuse the existing code.
-
-To regenerate a step, enable the [regenerate](#regenerate) option or delete the generated code in `cypress/e2e/**/__generated__/*.json`.
-
-> [!WARNING]
-> If you have tests with duplicate or identical titles (`describe` and `it`), it could cause the generated tests to fail.
 
 ## Release
 
