@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/ai-action/cy-ai/compare/v0.6.0...v0.6.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* **utils:** extract codeblock from AIMessage when using chat model ([4bb9d41](https://github.com/ai-action/cy-ai/commit/4bb9d41a1c3dab0a55a41b2d993dbee2632441a9))
+
 ## [0.6.0](https://github.com/ai-action/cy-ai/compare/v0.5.0...v0.6.0) (2025-06-08)
 
 
