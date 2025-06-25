@@ -217,6 +217,8 @@ cy.aiConfig({
 })
 ```
 
+Set the LLM to [Anthropic](https://github.com/ai-action/cy-ai/wiki/Anthropic).
+
 ## How It Works
 
 1. A prompt is created from your task, the HTML body, and the template.
