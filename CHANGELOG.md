@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/ai-action/cy-ai/compare/v0.6.1...v0.6.2) (2025-06-25)
+
+
+### Bug Fixes
+
+* **utils:** change logic to check if response is AIMessage ([8de7300](https://github.com/ai-action/cy-ai/commit/8de7300b05dabad414e27f53c072244c40d4c05b))
+
 ## [0.6.1](https://github.com/ai-action/cy-ai/compare/v0.6.0...v0.6.1) (2025-06-25)
 
 
