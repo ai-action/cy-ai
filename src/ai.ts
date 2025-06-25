@@ -3,7 +3,7 @@
 import type { Runnable } from '@langchain/core/runnables'
 import { sanitize } from 'dompurify'
 
-import { generated, options, regex } from './utils'
+import { codeblock, generated, options } from './utils'
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -73,7 +73,7 @@ function command(
         })
       }
 
-      const code = response.match(regex.codeblock)?.[2]?.trim()
+      const code = codeblock(response)
 
       if (code) {
         eval(code)
