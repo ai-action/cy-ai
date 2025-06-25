@@ -1,11 +1,11 @@
-import { AIMessage } from '@langchain/core/messages'
+import type { AIMessage } from '@langchain/core/messages'
 
 export function codeblock(response: string | AIMessage) {
   switch (true) {
     case typeof response === 'string':
       return extract(response)
 
-    case response instanceof AIMessage:
+    case typeof (response as AIMessage)?.text === 'string':
       return extract(response.text)
   }
 }
