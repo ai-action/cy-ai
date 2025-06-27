@@ -67,7 +67,8 @@ Write a test:
 ```js
 // cypress/e2e/example.cy.js
 it('visits example.com', () => {
-  cy.ai('go to https://example.com and see heading "Example Domain"')
+  cy.visit('/')
+  cy.ai('see heading "Example Domain"')
 })
 ```
 
@@ -219,13 +220,9 @@ cy.aiConfig({
 })
 ```
 
-Set the LLM to [Anthropic](https://github.com/ai-action/cy-ai/wiki/Anthropic).
+See how to use [Anthropic](https://github.com/ai-action/cy-ai/wiki/Anthropic).
 
-## Release
-
-Release is automated with [Release Please](https://github.com/googleapis/release-please).
-
-## Resources
+## Examples
 
 - [cypress-ai-demo](https://github.com/ai-action/cypress-ai-demo)
 
