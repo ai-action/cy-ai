@@ -1,6 +1,3 @@
-> [!NOTE]
-> This package is under development so expect **breaking changes** in future releases.
-
 # Cypress AI
 
 [![NPM](https://nodei.co/npm/cy-ai.png)](https://nodei.co/npm/cy-ai/)
