@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3](https://github.com/ai-action/cy-ai/compare/v0.6.2...v0.6.3) (2025-07-25)
+
+
+### Documentation
+
+* **readme:** remove note ([191216e](https://github.com/ai-action/cy-ai/commit/191216e8bfa9c3e68adc8dcf3e7becaa252a271d))
+
 ## [0.6.2](https://github.com/ai-action/cy-ai/compare/v0.6.1...v0.6.2) (2025-06-25)
 
 
