@@ -6,7 +6,7 @@
 [![build](https://github.com/ai-action/cy-ai/actions/workflows/build.yml/badge.svg)](https://github.com/ai-action/cy-ai/actions/workflows/build.yml)
 [![test](https://github.com/ai-action/cy-ai/actions/workflows/test.yml/badge.svg)](https://github.com/ai-action/cy-ai/actions/workflows/test.yml)
 
-🧪 Cypress AI command that generates E2E tests using an LLM (Large Language Model):
+🧪 Cypress AI command that generates E2E tests with LLM (Large Language Model):
 
 ```js
 cy.ai(string)
