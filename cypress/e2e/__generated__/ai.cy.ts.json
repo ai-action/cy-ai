@@ -1,9 +1,9 @@
 {
   "ai submits form": {
-    "go to example.cypress.io and see \"Kitchen Sink\" 1": "cy.visit('https://example.cypress.io')\ncy.contains('Kitchen Sink').click()",
-    "click on last submit 1": "cy.contains('submit').click()",
-    "find label 'Coupon Code' and type 'HALFOFF' 1": "cy.contains('Coupon Code').closest('label').next().type('HALFOFF')",
+    "see \"Kitchen Sink\" 1": "cy.contains('Kitchen Sink').should('be.visible')",
+    "click on last submit 1": "cy.contains('submit').last().click()",
+    "find label 'Coupon Code' and type 'HALFOFF' 1": "cy.get('label:contains(\"Coupon Code\")').click()\ncy.get('#couponCode1').type('HALFOFF')",
     "click on last submit 2": "cy.get('button:contains(\"Submit\")').click()",
-    "assert 'Your form has been submitted!' 1": "cy.get('p:contains(\"Your form has been submitted!\")').should('be.visible');"
+    "assert 'Your form has been submitted!' 1": "cy.get('.action-form').submit()\ncy.contains('Your form has been submitted!')"
   }
 }

@@ -18,9 +18,15 @@ Task: {task}
 
 const chain = prompt.pipe(llm)
 
+before(() => {
+  cy.aiConfig({ llm: chain })
+})
+
 describe('options', () => {
   it('sets options', () => {
-    cy.ai("open https://example.com and see heading 'Example Domain'", {
+    cy.visit('https://example.cypress.io')
+    cy.ai("see heading 'Kitchen Sink'")
+    cy.ai("click link 'Cypress API'", {
       llm: chain,
       log: false,
       regenerate: false,
