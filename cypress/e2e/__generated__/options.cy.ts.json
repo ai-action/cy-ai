@@ -1,5 +1,6 @@
 {
   "options sets options": {
-    "open https://example.com and see heading 'Example Domain'": "cy.visit('https://example.com');\ncy.get('h1').should('have.text', 'Example Domain');"
+    "see heading text 'Kitchen Sink' 1": "cy.get('h1').should('contain', 'Kitchen Sink');",
+    "click link with text 'Cypress API' 1": "cy.contains('Cypress API').click();"
   }
 }
