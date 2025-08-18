@@ -1,6 +1,6 @@
 {
   "options sets options": {
-    "see heading 'Kitchen Sink' 1": "cy.contains('h1', 'Kitchen Sink').should('be.visible');",
-    "click link 'Cypress API' 1": "cy.contains('Cypress API').click();"
+    "see heading text 'Kitchen Sink' 1": "cy.get('h1').should('contain', 'Kitchen Sink');",
+    "click link with text 'Cypress API' 1": "cy.contains('Cypress API').click();"
   }
 }

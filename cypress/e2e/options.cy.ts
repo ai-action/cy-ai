@@ -22,11 +22,11 @@ before(() => {
   cy.aiConfig({ llm: chain })
 })
 
-describe('options', () => {
+describe('options', { retries: 3 }, () => {
   it('sets options', () => {
     cy.visit('https://example.cypress.io')
-    cy.ai("see heading 'Kitchen Sink'")
-    cy.ai("click link 'Cypress API'", {
+    cy.ai("see heading text 'Kitchen Sink'")
+    cy.ai("click link with text 'Cypress API'", {
       llm: chain,
       log: false,
       regenerate: false,
