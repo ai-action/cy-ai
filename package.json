@@ -59,7 +59,7 @@
     "prettier": "3.6.2",
     "publint": "0.3.13",
     "typedoc": "0.28.13",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "typescript-eslint": "8.45.0"
   },
   "peerDependencies": {
