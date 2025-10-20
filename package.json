@@ -46,7 +46,7 @@
     "@commitlint/config-conventional": "20.0.0",
     "@eslint/compat": "1.4.0",
     "@eslint/eslintrc": "3.3.1",
-    "@eslint/js": "9.37.0",
+    "@eslint/js": "9.38.0",
     "@types/node": "24.8.1",
     "cypress": "15.4.0",
     "eslint": "9.37.0",
