@@ -38,7 +38,7 @@ jobs:
           xargs sed -i 's/regenerate: false/regenerate: true/g'
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
 
       - name: Check generated test
         run: |
