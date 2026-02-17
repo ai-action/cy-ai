@@ -60,7 +60,7 @@
     "publint": "0.3.17",
     "typedoc": "0.28.17",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.55.0"
+    "typescript-eslint": "8.56.0"
   },
   "peerDependencies": {
     "cypress": "*"
