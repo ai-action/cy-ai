@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "@langchain/core": "^0.3",
-    "@langchain/ollama": "^0.2",
+    "@langchain/ollama": "^1.2",
     "dompurify": "3"
   },
   "devDependencies": {
