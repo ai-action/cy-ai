@@ -37,8 +37,8 @@
     "automation"
   ],
   "dependencies": {
-    "@langchain/core": "^0.3",
-    "@langchain/ollama": "^0.2",
+    "@langchain/core": "^1.1",
+    "@langchain/ollama": "^1.2",
     "dompurify": "3"
   },
   "devDependencies": {
