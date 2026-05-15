@@ -55,7 +55,7 @@
     "eslint-plugin-tsdoc": "0.5.2",
     "globals": "17.5.0",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.0.4",
     "prettier": "3.8.3",
     "publint": "0.3.18",
     "typedoc": "0.28.19",
