@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import type { AIMessage } from '@langchain/core/messages'
 import type { Runnable } from '@langchain/core/runnables'
 import { sanitize } from 'dompurify'
 
@@ -21,7 +22,7 @@ declare global {
        *
        * @defaultValue Prompt template using Ollama model `qwen2.5-coder`
        */
-      llm: Runnable
+      llm: Runnable<Record<string, string>, string | AIMessage>
 
       /**
        * Whether to regenerate the Cypress step with AI.
@@ -44,7 +45,7 @@ function command(
     log = options.log,
     regenerate = options.regenerate,
     timeout = options.timeout,
-  } = {},
+  }: Partial<Cypress.AiOptions> = {},
 ) {
   if (log) {
     Cypress.log({ displayName: name, message: task })
@@ -55,11 +56,12 @@ function command(
       const code = generated.code(content)
 
       if (code) {
-        return eval(code)
+        eval(code)
+        return
       }
     }
 
-    cy.document({ log: false }).then({ timeout }, async (doc) => {
+    cy.document({ log: false, timeout }).then(async (doc) => {
       const response = await llm.invoke({
         task,
         html: sanitize(doc.body.innerHTML),
@@ -77,10 +79,11 @@ function command(
 
       if (code) {
         eval(code)
-        return generated.save(code)
+        generated.save(code)
+        return
       }
 
-      throw new Error(response)
+      throw new Error(typeof response === 'string' ? response : response.text)
     })
   })
 }

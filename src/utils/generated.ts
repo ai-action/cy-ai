@@ -31,21 +31,21 @@ class Generated {
   }
 
   /**
-   * Get task.
-   *
-   * @returns - Task with counter.
-   */
-  get task() {
-    return `${this._task} ${this.counter}`
-  }
-
-  /**
    * Get task counter.
    *
    * @returns - Task counter.
    */
   get counter() {
-    return this._counters.get(this._task) || 0
+    return this._counters.get(this._task) ?? 0
+  }
+
+  /**
+   * Get task.
+   *
+   * @returns - Task with counter.
+   */
+  get task() {
+    return `${this._task} ${String(this.counter)}`
   }
 
   /**
@@ -68,6 +68,8 @@ class Generated {
 
 const generated = new Generated()
 
+type Content = Partial<Record<string, Partial<Record<string, string>>>>
+
 /**
  * Read generated file.
  *
@@ -75,14 +77,12 @@ const generated = new Generated()
  * @returns - Chainable JSON content.
  */
 export function read(task?: string) {
-  return cy.readFile(generated.path, options).should(() => {
+  return cy.readFile<Content | null>(generated.path, options).should(() => {
     if (task) {
       generated.task = task
     }
   })
 }
-
-type Content = Record<string, Record<string, string>>
 
 /**
  * Get generated code.
@@ -90,7 +90,7 @@ type Content = Record<string, Record<string, string>>
  * @param content - JSON data.
  * @returns - Cypress code.
  */
-export const code = (content: Content) =>
+export const code = (content: Content | null) =>
   content?.[generated.title]?.[generated.task] ?? ''
 
 /**
@@ -99,17 +99,11 @@ export const code = (content: Content) =>
  * @param code - Cypress code.
  */
 export function save(code: string) {
-  read().then((content: Content) => {
+  read().then((content) => {
     const { task, title } = generated
 
-    if (!content) {
-      content = {}
-    }
-
-    if (!content[title]) {
-      content[title] = {}
-    }
-
+    content ??= {}
+    content[title] ??= {}
     content[title][task] = code
     const json = JSON.stringify(content, null, 2)
     cy.writeFile(generated.path, json, options)

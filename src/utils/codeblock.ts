@@ -5,7 +5,7 @@ export function codeblock(response: string | AIMessage) {
     case typeof response === 'string':
       return extract(response)
 
-    case typeof (response as AIMessage)?.text === 'string':
+    case typeof (response as AIMessage).text === 'string':
       return extract(response.text)
   }
 }
@@ -13,5 +13,5 @@ export function codeblock(response: string | AIMessage) {
 const regex = /```(javascript|js)?([\s\S]+?)```/
 
 function extract(text: string) {
-  return text.match(regex)?.[2]?.trim()
+  return regex.exec(text)?.[2]?.trim()
 }
