@@ -25,7 +25,9 @@ before(() => {
 describe('options', { retries: 3 }, () => {
   it('sets options', () => {
     cy.visit('https://example.cypress.io')
-    cy.ai("see heading text 'Kitchen Sink'")
+    cy.ai("see heading text 'Kitchen Sink'", {
+      timeout: 1000 * 60 * 5, // 5 minutes
+    })
     cy.ai("click link with text 'Cypress API'", {
       llm: chain,
       log: false,
