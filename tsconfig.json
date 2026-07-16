@@ -8,6 +8,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
+    "rootDir": "src",
     "outDir": "lib",
     "skipLibCheck": true,
     "types": ["cypress", "node"]

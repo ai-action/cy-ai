@@ -44,7 +44,6 @@
   "devDependencies": {
     "@commitlint/cli": "21.2.1",
     "@commitlint/config-conventional": "21.2.0",
-    "@eslint/compat": "2.1.0",
     "@eslint/eslintrc": "3.3.5",
     "@eslint/js": "10.0.1",
     "@types/node": "25.9.1",
@@ -58,9 +57,9 @@
     "lint-staged": "17.0.8",
     "prettier": "3.9.4",
     "publint": "0.3.21",
-    "typedoc": "0.28.19",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.62.0"
+    "typedoc": "0.28.20",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.64.0"
   },
   "peerDependencies": {
     "cypress": "*"

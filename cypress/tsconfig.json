@@ -2,7 +2,8 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "es2021",
-    "types": ["cypress", "node", "cypress-real-events"]
+    "rootDir": "..",
+    "types": ["cypress", "node"]
   },
   "include": ["../node_modules/cypress", "./**/*.ts"],
   "exclude": ["node_modules"]
