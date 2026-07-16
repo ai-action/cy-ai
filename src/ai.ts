@@ -61,36 +61,30 @@ function command(
       }
     }
 
-    cy.document({ log: false }).then((doc) => {
-      return cy
-        .wrap<Promise<string | AIMessage>, string | AIMessage>(
-          llm.invoke({
-            task,
-            html: sanitize(doc.body.innerHTML),
-          }),
-          { log: false, timeout },
-        )
-        .then((response) => {
-          if (log) {
-            // eslint-disable-next-line no-console
-            console.table({
-              Task: task,
-              Response: response,
-            })
-          }
+    // eslint-disable-next-line @typescript-eslint/use-unknown-in-catch-callback-variable
+    cy.document({ log: false }).then({ timeout }, async (doc) => {
+      const response = await llm.invoke({
+        task,
+        html: sanitize(doc.body.innerHTML),
+      })
 
-          const code = codeblock(response)
-
-          if (code) {
-            eval(code)
-            generated.save(code)
-            return
-          }
-
-          throw new Error(
-            typeof response === 'string' ? response : response.text,
-          )
+      if (log) {
+        // eslint-disable-next-line no-console
+        console.table({
+          Task: task,
+          Response: response,
         })
+      }
+
+      const code = codeblock(response)
+
+      if (code) {
+        eval(code)
+        generated.save(code)
+        return
+      }
+
+      throw new Error(typeof response === 'string' ? response : response.text)
     })
   })
 }
