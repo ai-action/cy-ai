@@ -61,29 +61,36 @@ function command(
       }
     }
 
-    cy.document({ log: false, timeout }).then(async (doc) => {
-      const response = await llm.invoke({
-        task,
-        html: sanitize(doc.body.innerHTML),
-      })
+    cy.document({ log: false }).then((doc) => {
+      return cy
+        .wrap<Promise<string | AIMessage>, string | AIMessage>(
+          llm.invoke({
+            task,
+            html: sanitize(doc.body.innerHTML),
+          }),
+          { log: false, timeout },
+        )
+        .then((response) => {
+          if (log) {
+            // eslint-disable-next-line no-console
+            console.table({
+              Task: task,
+              Response: response,
+            })
+          }
 
-      if (log) {
-        // eslint-disable-next-line no-console
-        console.table({
-          Task: task,
-          Response: response,
+          const code = codeblock(response)
+
+          if (code) {
+            eval(code)
+            generated.save(code)
+            return
+          }
+
+          throw new Error(
+            typeof response === 'string' ? response : response.text,
+          )
         })
-      }
-
-      const code = codeblock(response)
-
-      if (code) {
-        eval(code)
-        generated.save(code)
-        return
-      }
-
-      throw new Error(typeof response === 'string' ? response : response.text)
     })
   })
 }
