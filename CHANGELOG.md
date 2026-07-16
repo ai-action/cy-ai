@@ -1,60 +1,58 @@
 # Changelog
 
-## [0.6.3](https://github.com/ai-action/cy-ai/compare/v0.6.2...v0.6.3) (2025-07-25)
+## [0.6.4](https://github.com/ai-action/cy-ai/compare/v0.6.3...v0.6.4) (2026-07-16)
 
+### Miscellaneous Chores
+
+- release 0.6.4 ([b0baa89](https://github.com/ai-action/cy-ai/commit/b0baa89d3e4a93b52832f6e068893849620d983c))
+
+## [0.6.3](https://github.com/ai-action/cy-ai/compare/v0.6.2...v0.6.3) (2025-07-25)
 
 ### Documentation
 
-* **readme:** remove note ([191216e](https://github.com/ai-action/cy-ai/commit/191216e8bfa9c3e68adc8dcf3e7becaa252a271d))
+- **readme:** remove note ([191216e](https://github.com/ai-action/cy-ai/commit/191216e8bfa9c3e68adc8dcf3e7becaa252a271d))
 
 ## [0.6.2](https://github.com/ai-action/cy-ai/compare/v0.6.1...v0.6.2) (2025-06-25)
 
-
 ### Bug Fixes
 
-* **utils:** change logic to check if response is AIMessage ([8de7300](https://github.com/ai-action/cy-ai/commit/8de7300b05dabad414e27f53c072244c40d4c05b))
+- **utils:** change logic to check if response is AIMessage ([8de7300](https://github.com/ai-action/cy-ai/commit/8de7300b05dabad414e27f53c072244c40d4c05b))
 
 ## [0.6.1](https://github.com/ai-action/cy-ai/compare/v0.6.0...v0.6.1) (2025-06-25)
 
-
 ### Bug Fixes
 
-* **utils:** extract codeblock from AIMessage when using chat model ([4bb9d41](https://github.com/ai-action/cy-ai/commit/4bb9d41a1c3dab0a55a41b2d993dbee2632441a9))
+- **utils:** extract codeblock from AIMessage when using chat model ([4bb9d41](https://github.com/ai-action/cy-ai/commit/4bb9d41a1c3dab0a55a41b2d993dbee2632441a9))
 
 ## [0.6.0](https://github.com/ai-action/cy-ai/compare/v0.5.0...v0.6.0) (2025-06-08)
 
-
 ### Features
 
-* **generated:** add counter for duplicate tasks ([53c2bc9](https://github.com/ai-action/cy-ai/commit/53c2bc94247096efda6f63bfbd896c337ae57a99))
+- **generated:** add counter for duplicate tasks ([53c2bc9](https://github.com/ai-action/cy-ai/commit/53c2bc94247096efda6f63bfbd896c337ae57a99))
 
 ## [0.5.0](https://github.com/ai-action/cy-ai/compare/v0.4.0...v0.5.0) (2025-06-01)
 
-
 ### Features
 
-* **aiConfig:** add command `aiConfig` that sets config options ([c2dbf7f](https://github.com/ai-action/cy-ai/commit/c2dbf7fd8869ceac646ef0d5c32295431d2a83d5))
+- **aiConfig:** add command `aiConfig` that sets config options ([c2dbf7f](https://github.com/ai-action/cy-ai/commit/c2dbf7fd8869ceac646ef0d5c32295431d2a83d5))
 
 ## [0.4.0](https://github.com/ai-action/cy-ai/compare/v0.3.0...v0.4.0) (2025-06-01)
 
-
 ### Features
 
-* **options:** add `llm` that defaults to Ollama model qwen2.5-coder ([865a198](https://github.com/ai-action/cy-ai/commit/865a198287dffc3e80acd8792384c2ac5d5f657c))
+- **options:** add `llm` that defaults to Ollama model qwen2.5-coder ([865a198](https://github.com/ai-action/cy-ai/commit/865a198287dffc3e80acd8792384c2ac5d5f657c))
 
 ## [0.3.0](https://github.com/ai-action/cy-ai/compare/v0.2.0...v0.3.0) (2025-06-01)
 
-
 ### Features
 
-* **options:** add `regenerate` that defaults to false ([a837ac0](https://github.com/ai-action/cy-ai/commit/a837ac0d612529b0762dec85fd79d9dbbe87c2f4))
+- **options:** add `regenerate` that defaults to false ([a837ac0](https://github.com/ai-action/cy-ai/commit/a837ac0d612529b0762dec85fd79d9dbbe87c2f4))
 
 ## [0.2.0](https://github.com/ai-action/cy-ai/compare/v0.1.0...v0.2.0) (2025-06-01)
 
-
 ### Features
 
-* add command options `log` and `timeout` ([52df357](https://github.com/ai-action/cy-ai/commit/52df3574226e182fb2b501436856d5f0aec05bad))
+- add command options `log` and `timeout` ([52df357](https://github.com/ai-action/cy-ai/commit/52df3574226e182fb2b501436856d5f0aec05bad))
 
 ## 0.1.0 (2025-05-31)
 
